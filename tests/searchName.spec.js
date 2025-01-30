@@ -11,6 +11,7 @@ test("Login dan mencari nama yang salah", async ({ page }) => {
   await page.getByRole("link", { name: "PIM" }).click();
   await page.fill("div.oxd-autocomplete-text-input>input", "*#@!$");
   await page.click('button[type="submit"]');
+  await page.waitForTimeout(4000);
   const records = page.locator('span').filter({ hasText: 'No Records Found' });
   await expect(records).toBeVisible();
 });
