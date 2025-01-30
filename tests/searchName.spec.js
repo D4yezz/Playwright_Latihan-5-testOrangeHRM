@@ -13,5 +13,4 @@ test("Login dan mencari nama yang salah", async ({ page }) => {
   await page.click('button[type="submit"]');
   const records = page.locator('span').filter({ hasText: 'No Records Found' });
   await expect(records).toBeVisible();
-//   await expect(records).toHaveText("No Records Found");
 });
